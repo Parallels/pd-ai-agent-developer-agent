@@ -10,6 +10,16 @@ setup:
 	$(PIP) install --upgrade pip
 	$(PIP) install -r requirements.txt
 
+# Clean up generated files and virtual environment
+clean:
+	rm -rf $(VENV)
+	rm -rf build/
+	rm -rf dist/
+	rm -rf *.egg-info
+	find . -type d -name __pycache__ -exec rm -rf {} +
+	find . -type f -name "*.pyc" -delete
+
+
 .PHONY: install
 install:
 	$(PIP) install -r requirements.txt
