@@ -1,0 +1,36 @@
+{
+  "id": "pd-vm-updates-agent",
+  "name": "Virtual Machine Updates Agent",
+  "description": "Basic virtual machine updates agent that checks for updates and applies them when a VM is started or during chat",
+  "repo_url": "https://github.com/cjlapao/pd-ai-updates-agent",
+  "tag": "v0.1.0",
+  "agent_definitions": [
+    {
+      "id": "pd_security_checks_agent",
+      "name": "Background Updates Checks Agent",
+      "description": "Background agent for checking for updates",
+      "type": "background_agent",
+      "module_path": "pd_ai_updates_agent.background-agent.security-checks",
+      "class_name": "SecurityUpdateChecksAgent"
+    },
+    {
+      "id": "pd_check_updates_agent",
+      "name": "Check Updates Agent",
+      "description": "Agent for checking for updates",
+      "type": "llm_agent",
+      "module_path": "pd_ai_updates_agent.llm_agents.analyse_updates",
+      "class_name": "AnalyseUpdatesAgent"
+    }
+  ],
+  "icon": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSJjdXJyZW50Q29sb3IiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBjbGFzcz0ibHVjaWRlIGx1Y2lkZS1hY3Rpdml0eSI+PHBhdGggZD0iTTIyIDEyaC00bC0zIDlMOSAzIDYgMTJIMiIvPjwvc3ZnPg==",
+  "author": "Parallels Desktop",
+  "categories": [
+    "system",
+    "updates",
+    "security"
+  ],
+  "company_url": "https://www.parallels.com/",
+  "requirements": [
+    "psutil>=5.9.0"
+  ]
+}

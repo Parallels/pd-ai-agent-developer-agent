@@ -1,0 +1,3 @@
+psutil>=5.9.0
+pd_ai_agent_core>=0.1.3
+openai>=1.1.0
